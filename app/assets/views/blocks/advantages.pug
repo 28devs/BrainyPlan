@@ -1,0 +1,18 @@
+section.advantages#advantages
+  .advantages__container.container
+    h2.advantages__title.h2 Преимущества
+
+    ul.advantages__slider
+      each slide in slider
+        li.advantages__slide
+          .advantages__slide-wrapper
+            .advantages__slide-title.h3= slide.title
+            .advantages__slide-text= slide.text
+          .advantages__slide-img(class="advantages__slide-img--" + slide.img)
+
+    .advantages__slider-controls
+      button.advantages__slider-prev
+      .advantages__slider-dots
+      button.advantages__slider-next
+
+

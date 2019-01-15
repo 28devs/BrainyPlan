@@ -1,0 +1,19 @@
+.block
+  padding: 45px 0 @md 60px 0 @lg 100px 0
+
+.container
+  max-width: $container-sm-px
+  margin: * auto
+  padding: * 15px @md * 40px @xl * 0
+
+@media $md
+  .container
+    max-width: calc($container-md-px + 40px)
+
+@media $lg
+  .container
+    max-width: $container-lg-px
+
+@media $xl
+  .container
+    max-width: $container-xl-px

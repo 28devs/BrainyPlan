@@ -1,0 +1,12 @@
+section.price#price
+  .price__container.container
+    .price__title.h2 Цены
+
+    .price__wrapper
+      each item, i in price
+        .price__item(class=[i == 3 ? 'price__item--accent' : ''])
+          .price__item-label!= item.label
+          .price__item-price!= item.price
+            if item.tip
+              .price__item-tip!= item.tip
+          button.price__item-btn.btn(class=[i == 3 ? 'btn--white' : ''] data-modal="form-" + (i + 1) data-modal-title=item.dataModalTitle data-success-title=item.dataSuccessTitle) Купить

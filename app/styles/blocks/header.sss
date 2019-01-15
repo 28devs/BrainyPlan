@@ -1,0 +1,133 @@
+.header
+  position: absolute 0 0 null 0
+  z-index: 9
+  box-shadow: 0 2px 0 0 rgba(255, 255, 255, .16)
+  transition: transform .3s ease
+  will-change: transform
+
+  &--sticky
+    position: fixed
+    transform: translateY(-110%)
+
+  &--color
+    background: $main
+    box-shadow: 0 2px 0 0 #4984e6
+
+  &--sticky-show
+    transform: translateY(0)
+    visibility: visible
+
+  &__container
+    box: center space-between
+    height: 70px @xl 120px
+    position: @sm relative
+
+  &__logo
+    size: 18px 25px @xl 25px 35px
+    display: none @md block
+    background-size: contain
+    background-image: resolve("logo.png") @retina resolve("logo@2x.png")
+    margin-right: auto
+
+  &__title
+    text: #fff 600 25px
+    display: block @md none
+    margin-right: auto
+
+  &__nav
+    height: @xl 100%
+    display: flex
+    align-items: flex-start
+    flex-direction: column @xl row
+    position: absolute 72px auto auto 0 @xl static
+    bottom: @sm-down 0
+    right: @sm-down 0
+    max-width: @sm 320px @xl unset
+    height: @sm-down calc(100vh - 72px)
+    padding: 32px 25px @xl 0
+    z-index: 9
+    background: $main
+    border-radius: @sm 0 0 5px 5px
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1) @xl none
+
+    &:not(.open)
+      display: none @xl flex
+
+    &:hover &-link
+      opacity: @xl .3
+
+    &-item
+      height: @xl 100%
+      margin-bottom: 36px @xl 0
+
+      &:last-child
+        margin-bottom: 0
+
+        ^^&-link
+          padding-right: 0
+
+          &.active:after
+            right: 0
+
+    &-link
+      text: #fff 24px 1.2 @xs 28px @xl 15px
+      font-weight: bold @xl normal
+      height: 100%
+      align-items: center
+      display: inline @xl flex
+      text-decoration: none
+      box-shadow: @xl inset 0 0 0 0 rgba(255, 255, 255, .3)
+      transition: $transition
+      padding: @xl 0 30px
+      position: relative
+      border-bottom: 2px solid rgba(255, 255, 255, .2) @xl 0
+
+      &:hover
+        opacity: 1 !important
+
+      &.active
+        text: bold
+        border-color: rgba(255, 255, 255, 1)
+
+        &:after
+          content: ""
+          display: none @xl block
+          position: absolute null 30px -2px 30px
+          height: 2px
+          background: #fff
+
+  &__menu-btn
+    display: flex @xl none
+    flex-direction: column
+    align-items: flex-start
+    justify-content: center
+    size: 68px 70px
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    user-select: none
+    margin-right: 35px
+    margin-left: 13px @sm 0
+    box-shadow: inset -2px 0 0 0 rgba(255, 255, 255, .16)
+    border: 0
+
+    &-line
+      background: #fff
+      transition: $transition
+
+      &:nth-child(1)
+        size: 37px 4px
+        margin-bottom: 6px
+
+      &:nth-child(2)
+        size: 29px 4px
+        margin-left: 8px
+
+    &.open
+      ^&-line
+        &:nth-child(1)
+          transform: rotate(45deg) translate(4px, 4px)
+          size: 29px 4px
+
+        &:nth-child(2)
+          transform: rotate(-45deg) translate(3px, -3px)
+          margin-left: 0

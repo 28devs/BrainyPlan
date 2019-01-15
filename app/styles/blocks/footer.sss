@@ -1,0 +1,77 @@
+.footer
+  border-top: 1px solid rgba(52, 60, 72, .1)
+  padding: 15px 0 @md 39px 0 @xl 46px 0
+
+  &__container
+    box: left space-between
+    flex-direction: column @md row
+
+  &__wrapper
+    margin-top: 0 @md 9px @xl 0
+
+  &__title
+    margin-bottom: 4px
+
+  &__copy
+    text: rgba(52, 60, 72, .7) 15px
+    margin-bottom: 17px
+
+  &__link
+    text: $main bold 15px 1
+    text-decoration: none
+    border-bottom: 2px solid rgba(38, 108, 226, .1)
+
+    &:hover
+      border-bottom: 0
+
+  &__social
+    box: center
+    margin-bottom: 9px
+
+    &-item
+      margin-right: 13px
+      background-size: contain
+
+      &--telegram
+        background-image: resolve("icons/telegram-normal.png") @retina resolve("icons/telegram-normal@2x.png")
+        size: size("icons/telegram-normal.png")
+
+        &:hover
+          background-image: resolve("icons/telegram-hover.png") @retina resolve("icons/telegram-hover@2x.png")
+
+      &--skype
+        background-image: resolve("icons/skype-normal.png") @retina resolve("icons/skype-normal@2x.png")
+        size: size("icons/skype-normal.png")
+
+        &:hover
+          background-image: resolve("icons/skype-hover.png") @retina resolve("icons/skype-hover@2x.png")
+
+  &__info
+    padding-right: 0 @md 56px @xl 42px
+    margin-top: 48px @md 0
+
+    &-item
+      text: #343c48 15px 1.4
+      position: relative
+      padding-left: 26px
+
+      &:not(:last-child)
+        margin-bottom: 12px
+
+      &:before
+        content: ""
+        display: inline-block
+        position: absolute
+        left: 0
+        background-size: contain
+
+      &--mail:before
+        background-image: resolve("icons/mail.png") @retina resolve("icons/mail@2x.png")
+        size: size("icons/mail.png")
+        top: 7px
+
+      &--address:before
+        background-image: resolve("icons/address.png") @retina resolve("icons/address@2x.png")
+        size: size("icons/address.png")
+        top: 4px
+

@@ -1,0 +1,39 @@
+.platforms
+  padding: 57px 0 84px @sm 68px 0 91px @xl 105px 0 66px
+  background-image: resolve("platforms/background.png") @retina resolve("platforms/background@2x.png")
+  background-image: @md-down none
+  background-color: #f2f2f2 @md $main
+  background-position: 38vw top @xl top right
+  background-repeat: no-repeat
+  background-size: 813px @xl 953px
+
+  &__title
+    text: center @md #fff left
+    margin-bottom: 66px @xl 90px
+
+  &__wrapper
+    display: flex
+    flex-wrap: nowrap @sm wrap
+    flex-direction: column @sm row
+    justify-content: space-between @md flex-start
+    width: @md 600px
+
+  &__link
+    display: block
+    size: 225px 67px @sm 209px 62px @xl 225px 67px
+    margin-right: @md 28px
+    margin-bottom: 15px @md 28px @xl 40px
+    background-size: contain
+    background-repeat: no-repeat
+    transition: $transition
+    margin: @sm-down * auto
+
+    &:hover
+      opacity: .9
+
+    &:last-child
+      margin: @md-down 0 auto
+
+    @each $i in android, ios, web, telegram, vk
+      &--$i
+        background-image: resolve("platforms/$i.png") @retina resolve("platforms/$i@2x.png")

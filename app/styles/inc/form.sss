@@ -1,0 +1,34 @@
+.input
+
+  &__elem
+    border: 2px solid #f2f2f2
+    border-color: #D3D9E4
+    border-radius: 5px
+    padding: 0 23px
+    min-height: 58px
+    outline: 0
+    text: $text-dark 14px
+    font-family: $font
+    width: 100%
+    transition: $transition
+
+    &::placeholder
+      text: $text-dark
+
+    &:focus
+      border-color: $main
+
+  &.error
+    ^&__elem
+      border-color: #ff0000
+      text: #e22626
+
+      &::placeholder
+        text: #e22626
+
+.error
+  .btn
+    background: #ff0000
+    opacity: .1
+    pointer-events: none
+    cursor: default

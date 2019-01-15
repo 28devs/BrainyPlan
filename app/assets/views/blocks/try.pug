@@ -1,0 +1,12 @@
+section.try#try
+  .try__container.container
+    .try__block
+      .try__block-wrapper
+        .try__block-title.h4 Попробуйте бесплатно
+        .try__block-text 2 месяца бесплатного доступа, если оставить электронную почту в форме
+
+      form.try__block-form(action="/" method="get")
+        .try__block-form-input.input
+          input.input__elem(type="text" name="email" placeholder="Почта" data-error="Почта введена неверно!")
+
+        button.btn.btn--submit(type="submit")

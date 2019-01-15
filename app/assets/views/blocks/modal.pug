@@ -1,0 +1,28 @@
+.modal-hide
+
+  #modal-form
+    .modal
+      .modal__title
+
+      form.modal__form(action="/" method="get")
+        .input
+          input.input__elem(type="text" name="name" placeholder="Как Вас зовут?" data-error="Имя введено неверно!")
+
+        .input
+          input.input__elem(type="text" name="email" placeholder="Почта" data-error="Почта введена неверно!")
+
+        .modal__btns
+          .modal__cancel(onclick="modal.close()") Отмена
+          button.btn.btn--submit(type="submit")
+
+  #modal-form-success
+    .modal
+      .modal__img-success
+      .modal__title
+      button.btn(onclick="modal.close()") Отлично!
+
+  #modal-form-failed
+    .modal
+      .modal__img-failed
+      .modal__title Что-то пошло не так. Попробуйте еще раз
+      button.btn(onclick="modal.close()") Повторить

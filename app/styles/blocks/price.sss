@@ -1,0 +1,64 @@
+.price
+  padding-top: 55px @sm 44px @xl 63px
+  background: #f9f9f9
+  box-shadow: inset 0px -72px 0 #fff
+
+  &__title
+    text: center
+    margin-bottom: 63px @sm 55px @xl 74px
+
+  &__wrapper
+    box: wrap
+    margin: 0 @md -15px
+
+  &__item
+    width: 100% @md calc(100% / 2 - 30px) @xl calc(100% / 4 - 30px)
+    margin: 0 0 19px 0 @md 15px
+    padding: 30px @xl 30px 32px
+    border-radius: 5px
+    background-color: #fff
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.02)
+    box: vertical left
+
+    &-label
+      text: #707070 15px 1.6
+      border: 1px solid #e6e6e6
+      border-radius: 5px
+      padding: 6px 15px
+      display: inline-block
+      margin-bottom: 36px @xl 14px
+
+      br
+        display: none @xl block
+
+    &-price
+      text: $main bold 37px
+      box: center
+      justify-content: space-between @xl flex-start
+      white-space: nowrap
+      margin-top: auto
+      width: 100%
+
+    &-tip
+      text: rgba(52, 60, 72, .4) 15px 0.93
+      font-weight: normal
+      margin-left: 16px
+      padding-left: 33px @sm 42px @xl 16px
+      border-left: 1px solid rgba(52, 60, 72, .14)
+
+    &-btn
+      width: 100%
+      margin-top: 13px @xl 10px
+      text: 17px !important
+      min-height: 62px
+
+    &--accent
+      background: $main
+      box-shadow: 0px 8px 16px 0px rgba(38, 108, 226, 0.19)
+
+      ^&-label
+        text: #fff
+        border-color: rgba(255, 255, 255, .15)
+
+      ^&-price
+        text: #fff

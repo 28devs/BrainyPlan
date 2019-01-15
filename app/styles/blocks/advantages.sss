@@ -1,0 +1,100 @@
+.advantages
+  padding: 9px 0 23px @sm 22px 0 80px @xl 65px 0 132px
+
+  &__container
+
+  &__title
+    text: center
+    margin-bottom: 11px @sm 26px
+
+  &__slide
+    box: center
+    flex-direction: column-reverse @md row
+    justify-content: end
+
+    &:first-child
+      opacity: 1 !important
+      position: static !important
+
+    &-wrapper
+      position: relative
+      max-width: 100% @md 50% @xl unset
+      margin-top: -9px @sm 5px @md -50px @xl -68px
+
+    &-title
+      text: $main
+      margin-bottom: 17px @sm 23px @xl 29px
+
+    &-text
+      text: #707070 12px 2.3 @sm 12px 2 @xl 15px 2.13
+      max-width: @xl 440px
+
+    &-img
+      min-width: 100% @md 50% @xl 642px
+      background-size: 390px @sm 460px @xl 107%
+      background-repeat: no-repeat
+      background-position: center
+      position: relative
+      right: @xl -72px
+      margin-bottom: 14px @sm 0
+
+      @each $i in goals-system, autoplanning, cloud-sync, co-work, smart-notifications, social-network-access
+
+        &--$i
+          background-image: resolve("carousel/$i.png") @retina resolve("carousel/$i@2x.png")
+          size: auto 241px @sm auto 291px @xl size("carousel/$i.png")
+
+  &__slider
+    pointer-events: none
+    overflow: hidden
+
+    &-controls
+      box: center space-between
+      size: 100% 58px @md 174px 58px
+      padding: 0 12px
+      border-radius: 5px
+      border: 2px solid $main
+      margin: 22px auto 0 @md -23px 0 0 0 @xl -112px 0 0 0
+      background: #fff
+      z-index: 7
+      position: relative
+
+      .glider-dots
+        flex-wrap: nowrap
+
+      .glider-dot
+        size: 8px
+        margin: 4px
+        background: #d6d8da
+        transition: $transition
+
+        &.active
+          background: $main
+
+    &-prev, &-next
+      size: 20px
+      border-radius: 5px
+      border: 0
+      cursor: pointer
+      background-image: svg-load("icons/arrow.svg" fill: #d6d8da)
+      background-color: transparent
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 7px
+      outline: 0
+
+      &:not(.disabled)
+        background-image: svg-load("icons/arrow.svg" fill: $main)
+
+      &:hover:not(.disabled)
+        background-image: svg-load("icons/arrow.svg" fill: $main)
+
+      &:active
+        background-color: rgba(38, 108, 226, .1)
+
+    &-prev
+      transform: scale(-1)
+
+body:not(.load) .advantages__slide
+  position: absolute
+  opacity: 0

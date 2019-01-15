@@ -1,0 +1,63 @@
+.hero
+  padding-top: 95px @xl 120px
+  overflow: hidden
+  max-width: 100vw
+
+  &__container
+    box: left space-between
+    position: relative
+    padding-bottom: 110px @sm 113px @xl 38px
+
+    &:after
+      content: ""
+      display: block
+      size: 150vw 150vh
+      background: $main
+      border-radius: 0 0 0 102px
+      position: absolute null null 0 0
+      transform: rotate(-15deg) translate(9px, 12px) @xl rotate(-15deg) translate(-32px, 12px)
+      transform-origin: left bottom
+      z-index: -1
+
+  &__wrapper
+    margin-top: -3px @md 71px @xl 130px
+    margin-right: @md 56px
+    width: 100% @md auto
+
+  &__title
+    text: #fff 600 25px @md 49px
+    margin-bottom: 13px
+    display: none @md block
+
+  &__text
+    text: rgba(255, 255, 255, .5) 300 20px 1.4
+    text-align: center @md left
+    margin-bottom: 272px @md 63px
+
+  &__btn
+    margin: * auto @md 0
+    display: flex @md inline-flex
+    width: @sm-down 100%
+    max-width: 320px
+
+  &__video
+    size: 306px 220px @md 564px 412px @xl 676px 494px
+    min-width: 306px @md 564px
+    background-image: resolve("promo-video.png") @retina resolve("promo-video@2x.png")
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    margin: 0 @xl 48px -20px
+    box: center middle
+    cursor: pointer
+    position: absolute @md static
+    top: 80px
+    left: 50%
+    transform: @md-down translateX(-50%)
+    transition: opacity $transition
+
+    &:hover .btn
+      @extend .btn--play:hover
+
+    &:hover .btn:before
+      @extend .btn--play:hover:before

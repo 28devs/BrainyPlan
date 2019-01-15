@@ -1,0 +1,14 @@
+header.header
+  .header__container.container
+    .header__menu-btn
+      .header__menu-btn-line
+      .header__menu-btn-line
+
+    a.header__logo.scroll-to(href="#about")
+
+    .header__title BrainyPlan
+
+    nav.header__nav
+      each link, i in nav
+        .header__nav-item
+          a.header__nav-link.scroll-to(href=link.anchor class=[i == 0 ? 'active' : ''])= link.name

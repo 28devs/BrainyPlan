@@ -1,0 +1,7 @@
+section.platforms#platforms
+  .platforms__container.container
+    .platforms__title.h2 Поддерживаемые<br> платформы
+
+    .platforms__wrapper
+      each i in ['android', 'ios', 'web', 'telegram', 'vk']
+        a.platforms__link(href="#!" class="platforms__link--" + i)
