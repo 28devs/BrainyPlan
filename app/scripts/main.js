@@ -113,13 +113,8 @@ window.addEventListener('load', function () {
   });
 
   setInterval(function () {
-    console.log("slide: " + slider.slide)
-  }, 2000)
-
-  setInterval(function () {
     slider.updateControls();
   }, 280)
-
 
   var hoverOnSlider = false;
 
@@ -129,8 +124,6 @@ window.addEventListener('load', function () {
 
   document.querySelector('.advantages__container').addEventListener('mouseout', function () {
     hoverOnSlider = false;
-    to = slider.slide != 5 ? slider.slide + 1 : 0;
-    slider.scrollItem(to);
   });
 
   setInterval(function () {
@@ -199,7 +192,7 @@ function formHandler(form, type) {
       showModalSuccess()
     }
 
-    console.log("submit", data);
+    //console.log("submit", data);
   });
 }
 
